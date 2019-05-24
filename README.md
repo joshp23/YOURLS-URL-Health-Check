@@ -2,8 +2,8 @@
 A YOURLS plugin that checks submitted URL's for validity, reachability, and redirection
 
 - If a submitted URL does not meet [RFC 2396](http://www.faqs.org/rfcs/rfc2396.html) standards, it is rejected
-- If a submitted URL is unreachable (times out after 3 seconds), it is rejected
-- If a URL is a redirect, the final destination is stored to avoid nested redirects
+- If a submitted http(s) URL is unreachable (times out after 3 seconds), it is rejected
+- If a submitted http(s) URL is a redirect, the final destination is stored to avoid nested redirects
 
 ### Requirements
 - A working [YOURLS](https://github.com/YOURLS/YOURLS) installation
