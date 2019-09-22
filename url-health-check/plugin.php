@@ -3,7 +3,7 @@
 Plugin Name: URL Health Check
 Plugin URI: https://github.com/joshp23/YOURLS-URL-Health-Check
 Description: Checks submitted long URL's for validity, reachability, and redirection
-Version: 0.0.1
+Version: 0.0.2
 Author: Josh Panter
 Author URI: https://unfettered.net
 */
@@ -13,6 +13,9 @@ yourls_add_filter('shunt_add_new_link', 'url_health_check');
 function url_health_check( $is, $url, $keyword = '' , $title = '') {
 
 	$return = false;
+
+	if ( ! yourls_get_protocol( $url ) )
+		$url = 'https://'.$url;
 
 	// validate url
 	if( !filter_var($url, FILTER_VALIDATE_URL) ) {
